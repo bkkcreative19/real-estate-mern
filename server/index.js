@@ -3,6 +3,7 @@ import morgan from "morgan";
 import cors from "cors";
 import connectDB from "./config/db.js";
 import listingRouter from "./routes/Listing.js";
+import typesRouter from "./routes/TypeOfListings.js";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -19,6 +20,7 @@ app.use(morgan("tiny"));
 
 // Routes
 app.use("/api", listingRouter);
+app.use("/api", typesRouter);
 
 // Error Handler
 
