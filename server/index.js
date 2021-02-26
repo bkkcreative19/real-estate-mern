@@ -3,7 +3,9 @@ import morgan from "morgan";
 import cors from "cors";
 import connectDB from "./config/db.js";
 import listingRouter from "./routes/Listing.js";
-import typesRouter from "./routes/TypeOfListings.js";
+import userRouter from "./routes/User.js";
+import testRouter from "./routes/Test.js";
+import favoriteRouter from "./routes/Favorite.js";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -20,7 +22,9 @@ app.use(morgan("tiny"));
 
 // Routes
 app.use("/api", listingRouter);
-app.use("/api", typesRouter);
+app.use("/api", userRouter);
+app.use("/api", testRouter);
+app.use("/api", favoriteRouter);
 
 // Error Handler
 
